@@ -1,0 +1,44 @@
+CREATE TABLE Customers 
+( 
+    Cid    INT PRIMARY KEY, 
+    Cname  VARCHAR(40), 
+    Cmobno numeric(10) 
+)
+
+INSERT INTO Customers VALUES (1, 'AA', 9853977973) 
+INSERT INTO Customers VALUES (2,'BB', 8895558077) 
+INSERT INTO Customers VALUES (3,'CC', 7021801173) 
+
+SELECT * FROM Customers
+
+CREATE TABLE Productt 
+( 
+    Pcode INT PRIMARY KEY, 
+    Pname VARCHAR(20), 
+    Price MONEY 
+) 
+
+INSERT INTO Productt VALUES (10,'C',500) 
+INSERT INTO Productt VALUES (20,'C++',1000) 
+INSERT INTO Productt VALUES (30,'.NET',3500) 
+INSERT INTO Productt VALUES (40,'SQL',1800) 
+
+SELECT * FROM Productt
+
+CREATE TABLE Orders 
+( 
+    Odid     INT PRIMARY KEY, 
+    Ordate   DATE, 
+    Quantity INT, 
+    Cid      INT FOREIGN KEY REFERENCES Customers(Cid), 
+    Pcode    INT FOREIGN KEY REFERENCES Productt(Pcode) 
+) 
+
+INSERT INTO Orders VALUES (101,'2017/12/20',9,1,10) 
+INSERT INTO Orders VALUES (102,'2017/12/20',10,2,10) 
+INSERT INTO Orders VALUES (103,'2017/12/21',6,3,20) 
+INSERT INTO Orders VALUES (104,'2017/12/22',11,1,40) 
+INSERT INTO Orders VALUES (105,'2017/12/23',8,1,30) 
+
+SELECT * FROM Orders
+
