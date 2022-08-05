@@ -17,25 +17,27 @@ insert into Customer_Table values(11,'seema','Hyd','seema498@gmail.com',78906543
 (17,'sandhaya','Andhra','sandhaya498@gmail.com',7890654321)
 
 
-create Table Orders_Table (OrdID int,OrdNumber varchar(50),OrdDate varchar(50),Quantity numeric(2,0))
+create Table Orders_Table (OrdID int,OrdNumber varchar(50),OrdDate datetime,Quantity numeric(2,0))
 
 alter Table Orders_Table add CustID int
 
 alter Table Orders_Table alter column OrdNumber numeric(18,0) 
 
+alter Table Orders_Table alter column OrdDate datetime
+
 sp_help Orders_Table
 
 select * from Orders_Table
 
-drop table Orders_Table
+--drop table Orders_Table
 
-insert into Orders_Table values(21,23456,'22/07/2021',1,11),
-(22,23456890000,'15/09/2021',3,12),
-(23,23456900000,'23/05/2021',4,15),
-(24,23456656754,'15/06/2022',2,13),
-(25,234566556544,'03/07/2022',2,12),
-(26,234565433567,'12/09/2021',1,11),
-(27,234566777786,'28/04/2021',1,14)
+insert into Orders_Table values(21,23456,22/07/2021,1,11),
+(22,23456890000,15/09/2021,3,12),
+(23,23456900000,23/05/2021,4,15),
+(24,23456656754,15/06/2022,2,13),
+(25,234566556544,03/07/2022,2,12),
+(26,234565433567,12/09/2021,1,11),
+(27,234566777786,28/04/2021,1,14)
 
 create Table Products_Table(ProdID int ,ProdName varchar(50),ProdType varchar(50),ProdPrice numeric(18,0))
 
@@ -51,7 +53,7 @@ insert into Products_Table Values(30,'Watch','Electronics',15000,11),
 
 update Products_Table set ProdName='Ipad' where CustID=13
  
- drop Table Products_Table
+ --drop Table Products_Table
 
 select * from Products_Table
 
@@ -69,6 +71,8 @@ insert into Account_Table values('seema',4378905432190,'SB',11),
 ('panathi',5378905432190,'SB',16)
 
 SELECT * FROM Account_Table
+
+ --drop Table  Account_Table 
 
 create View Customer_View
 as
