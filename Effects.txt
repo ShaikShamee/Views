@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link href="showandHide.CSS" rel="StyleSheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="showandhide.js"></script>
+</head>
+<body>
+<div id="demo"> I will disappear and show according to click.so click he hide to disappearing and click on the show for appearing purposeand click on the toggle if it is disappear it is appear.viceverse</div><br>
+<button id="hide">Hide</button>&nbsp;&nbsp;
+<button id="show">Show</button>&nbsp;&nbsp;
+<button id="toggle">Toggle between hiding and showing the paragraphs</button>
+<br/>
+<div id="div1"></div><br>
+<div id="div2"></div><br>
+<div id="div3"></div><br>
+<button id="fadeIn">Click to fade in boxes</button><br>
+<button id="fadeOut">Click to fade Out boxes</button><br>
+<button id="fadeToggle">Click to fade in/out boxes</button><br>
+<div id="flip" style="color:blue">Click to slide up panel</div><br>
+<div id="panel">Hello world!</div><br>
+<div id="flip1" style="color:red">Click to slide toggle panel</div><br>
+<div id="panel1">Hello world!</div><br>
+<div id="anim"></div><br>
+<button id="animate">Start Animation</button>
+</body>
+</html>

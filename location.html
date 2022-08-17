@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title>DINO WORLD</title>
+    <style>
+        .card{
+            display: inline-block;
+            margin-right: 20px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="jumbotron">
+        <center>
+        <h1>WELCOME TO DINO WORLD</h1>
+        <p>WELCOME TO THE WORLD OF DINOSAUR. HOPE YOU LIKE IT</p>
+        </center>
+      </div>
+      <div class="container">
+        <ul>
+            <li>Dino</li>
+            <li>Contact us with button and geolocation</li>
+        </ul>
+        <br><br><br>
+
+        <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="TajMahal.jpg" alt="DINOSAUR IMAGE">
+            <div class="card-body">
+              <h5 class="card-title">DINOSAUR COLLECTION</h5>
+              <p class="card-text">Limited edition, only available at are platform.</p>
+              <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+          </div>
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="TajMahal.jpg" alt="DINOSAUR IMAGE">
+            <div class="card-body">
+              <h5 class="card-title">ABOUT DINOSAUR</h5>
+              <p class="card-text">KNOW ABOUT DINOSAUR</p>
+              <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+          </div>
+          <div class="card" style="width: 25rem;">
+            <img class="card-img-top" src="TajMahal.jpg" alt="DINOSAUR IMAGE">
+            <div class="card-body">
+              <h5 class="card-title">DINO</h5>
+              <p class="card-text">BUY YOUR DINO WORLD TICKET</p>
+              <a href="#" class="btn btn-primary">Buy</a>
+            </div>
+          </div>
+          <br><br><br><br>
+      </div>
+<hr>
+
+<script type = "text/javascript">
+  var watchID;
+  var geoLoc;
+  
+  function showLocation(position) {
+     var latitude = position.coords.latitude;
+     var longitude = position.coords.longitude;
+     alert("Latitude : " + latitude + " Longitude: " + longitude);
+  }
+  
+  function errorHandler(err) {
+     if(err.code == 1) {
+        alert("Error: Access is denied!");
+     } else if( err.code == 2) {
+        alert("Error: Position is unavailable!");
+     }
+  }
+  
+  function getLocationUpdate(){
+     
+     if(navigator.geolocation){
+        
+        // timeout at 60000 milliseconds (60 seconds)
+        var options = {timeout:60000};
+        geoLoc = navigator.geolocation;
+        watchID = geoLoc.watchPosition(showLocation, errorHandler, options);
+     } else {
+        alert("Sorry, browser does not support geolocation!");
+     }
+  }
+</script>
+<form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div class="form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check my location</label>
+      <br><br>
+    </div>
+  </form>
+<form>
+  <input type = "button" class="btn btn-primary btn-dark" onclick = "getLocationUpdate();" value = "Get location"/>
+</form>
+</body>
+</html>

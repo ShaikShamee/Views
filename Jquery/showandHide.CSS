@@ -1,0 +1,55 @@
+#demo
+{
+color:white;
+border-style:groove;
+background-color:brown;
+ width: 300px;height:100px;
+}
+
+#hide,#fadeOut
+{
+    color:rgb(36, 25, 21);
+    font-size:small;
+    background-color:rgb(151, 240, 8);
+}
+#show,#fadeIn
+{
+    color:rgb(156, 92, 105);
+    font-size:small;
+    background-color:rgb(14, 127, 241);
+}
+#toggle,#fadeToggle
+{
+    color:rgb(189, 167, 159);
+    font-size:small;
+    background-color:rgb(107, 47, 74);
+}
+#div1
+{
+width:80px;
+height:80px;
+display:none;
+background-color:red;
+}
+#div2
+{
+width:80px;
+height:80px;
+display:none;
+background-color:green;
+}
+#div3
+{
+width:80px;
+height:80px;
+display:none;
+background-color:blue;
+}
+
+#anim
+{
+background:#98bf21;
+height:100px;
+width:100px;
+position:relative;
+}
